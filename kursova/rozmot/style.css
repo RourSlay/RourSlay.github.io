@@ -1,0 +1,23 @@
+.menu{
+    width: 80%;
+    margin-left: 10%;
+    height: 70px;
+    background: url(https://dcmedia.ru/uploads/blogs/4e32b8e72c43bfce0d5bb821a5cd7b39.jpg);
+    display: flex;
+    justify-content: space-evenly;
+}
+.menu_button{
+    width: 9%;
+    height: 70px;
+    background: linear-gradient(to left, rgba(203, 201, 194, 0) 50%, rgba(18, 21, 18, 0.455) 50%);
+    background-size: 200%;
+    transition: all 0.25s linear;
+    display:flex ;
+    align-items: center;
+    justify-content: center;
+    color: white;
+
+}
+.menu_button:hover{
+background-position:-100%  20% ;
+}

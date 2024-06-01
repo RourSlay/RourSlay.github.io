@@ -1,0 +1,43 @@
+.add_tovar{
+    background-image: url('малюнок.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 100vh; /* Зробити фон по всій висоті вікна */
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0; 
+    left: 0;
+}
+.form{
+    background:white;
+    color: black;
+    width: 40vw;
+    height: 90vh;
+    margin: 10px auto;
+    overflow-y: scroll;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: monospace;
+    font-size: 20px;
+}
+.add_tovar{
+   display: none;
+}
+table{
+    width: 100%;
+    border: 2px solid orange;
+    border-radius: 5px;
+}
+.red{
+   border: 1px solid  red;
+    height: 50px;
+}
+body{
+    background:green;
+}
+.right{float: right;
+}
+body{
+    background:url(https://www.google.com/url?sa=i&url=https%3A%2F%2Ftehnoevrostok.business.site%2F&psig=AOvVaw0w-rH4yX0L5xti_l2-ljza&ust=1707767350872000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCJjOw6SHpIQDFQAAAAAdAAAAABAJ);
+}

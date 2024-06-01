@@ -4,64 +4,168 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../styles/admin_page.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
-   <div class="menu">
-
-   </div>
-   <div class="add_tovar">
+    <a href="http://localhost:5501/index.html" class="menu_button">Головна</a>
+    <div class="menu">
+        <button onclick="show('add_tovar')">Додати товар</button>
+    </div>
+    <div class="add_tovar" id="add_tovar">
         <div class="form">
-            <label for="">Назва</label><br>
-            <input type="text" class="tovar_info" id="tovar_name"><br><br>
+            <h3 align="center">Додавання</h3>
+            <label for="">Назва товару</label><br>
+            <input type="text" class="tovar_info form-control"  id="tovar_name"><br>
 
-            <label for="">Вага</label><br>
-            <input type="number" class="tovar_info" id="tovar_mass"><br><br>
+            <label for="">Тип товару</label><br>
+            <input type="text" class="tovar_info form-control"  id="tovar_type"><br>
 
-            <label for="">Опис</label><br>
-            <input type="text" class="tovar_info" id="tovar_opis"><br><br>
-
+            <label for="">Опис товару</label><br>
+            <input type="text" class="tovar_info form-control" id="tovar_opis"><br>
+           
+            <label for="">Вага товару</label><br>
+            <input type="number" class="tovar_info form-control" id="tovar_mass"><br>
+           
             <label for="">Ціна</label><br>
-            <input type="numder" class="tovar_info" id="tovar_price"><br><br>
+            <input type="number" class="tovar_info form-control" id="tovar_price"><br>
 
-            <label for="">Виробник</label><br>
-            <select name="" id="tovar_virobnik">
-                <option value="Whirlpool">Whirlpool</option>
-                <option value="rztk">rztk</option>
-                <option value="philips">philips</option>
-                <option value="bosch">bosch</option>
-                <option value="samsung">samsung</option>
-                <option value="LG">LG</option>
-                <option value="indesit">indesit</option>
-                <option value="Tefal">Tefal</option>
-                <option value="Beko">Beko</option>
-                <option value="braun">braun</option>
-            </select><br><br>
 
             <label for="">Габарити</label><br>
-            <input type="number" class="tovar_info" id="tovar_dimensions"><br><br>
-
+            <input type="text" class="tovar_info form-control" id="tovar_kcal"><br>
+           
             <label for="">Гарантія</label><br>
-            <select name="" id="tovar_garante">
-                <option value="1 year">1 рік</option>
-                <option value="2 year">2 роки</option>
-                <option value="3 year">3 роки</option>
-                <option value="5 years">5 років</option>
-            </select><br><br>
+            <select name="" id="tovar_gar" class="form-select" aria-label="Default select example">
+                <option value="6">6 місяців</option>
+                <option value="12">12 місяців</option>
+                <option value="24">24 місяців</option>
+                <option value="36">36 місяців</option>
+            </select><br>
 
-            <label for="">Країна віробника</label><br>
-            <input type="text" class="tovar_info" id="tovar_country"><br><br>
 
-            <label for="">Електроспоживання</label><br>
-            <input type="text" class="tovar_info" id="tovar_electricity_consumption
-            "><br><br>
+            <label for="">Країна виробника</label><br>
+            <input type="text" class="tovar_info form-control" id="tovar_fat"><br>
+           
+            <label for="">Клас електро споживання</label><br>
+            <input type="text" class="tovar_info form-control" id="tovar_proteins"><br>
+
+
+            <label for="">Виробник</label><br>
+            <select name="" id="tovar_developer" class="form-select" aria-label="Default select example">
+                <option value="samsung">Самсунг</option>
+                <option value="bosch">BOSCH</option>
+                <option value="zanussi">Zanussi</option>
+                <option value="lg"> LG</option>
+                <option value="electrolux">Електролюкс</option>
+                <option value="whirlpool">Whirlpool</option>
+                <option value="beko">Beko</option>
+                <option value="gorenje">GORENJE</option>
+            </select><br>
+            <label for="">Вставте сюда посилання з картинкою товара</label>
+            <input type="text" class="tovar_info form-control" id="tovar_kartinka"><br>
+
+            <button onclick="add_tovar()">Додати товар</button>
+            <button onclick="hide('add_tovar')">Закрити</button>
+           
+        </div>
+    </div>
+    <div class="add_tovar" id="edit_tovar">
+        <div class="form">
+            <h2 id="zagol"></h2>
+            <h3 align="center">Редагування<button onclick="hide(' getTovar_from_fb')">x</button></h3>
+            <label for="">Назва товару</label><br>
+            <input type="text" class="tovar_info form-control"  id="tovar_name_edit"><br>
+
+            <label for="">Тип товару</label><br>
+            <input type="text" class="tovar_info form-control"  id="tovar_type_edit"><br>
+           
+            <label for="">Опис товару</label><br>
+            <input type="text" class="tovar_info form-control" id="tovar_opis_edit"><br>
+           
+            <label for="">Вага товару</label><br>
+            <input type="number" class="tovar_info form-control" id="tovar_mass_edit"><br>
+           
+            <label for="">Ціна</label><br>
+            <input type="number" class="tovar_info form-control" id="tovar_price_edit"><br>
+
+
+            <label for="">Габарити</label><br>
+            <input type="text" class="tovar_info form-control" id="tovar_kcal_edit"><br>
+           
+            <label for="">Гарантія</label><br>
+            <select name="" id="tovar_gar_edit" class="form-select" aria-label="Default select example">
+                <option value="6">6 місяців</option>
+                <option value="12">12 місяців</option>
+                <option value="24">24 місяців</option>
+                <option value="36">36 місяців</option>
+            </select><br>
+
+
+            <label for="">Країна виробника</label><br>
+            <input type="text" class="tovar_info form-control" id="tovar_fat_edit"><br>
+           
+            <label for="">Клас електро споживання</label><br>
+            <input type="text" class="tovar_info form-control" id="tovar_proteins_edit"><br>
+
+
+            <label for="">Виробник</label><br>
+            <select name="" id="tovar_developer_edit" class="form-select" aria-label="Default select example">
+                <option value="samsung">Самсунг</option>
+                <option value="bosch">BOSCH</option>
+                <option value="zanussi">Zanussi</option>
+                <option value="lg"> LG</option>
+                <option value="electrolux">Електролюкс</option>
+                <option value="whirlpool">Whirlpool</option>
+                <option value="beko">Beko</option>
+                <option value="gorenje">GORENJE</option>
+            </select><br>
+            <label for="">Вставте сюда посилання з картинкою товара</label>
+            <input type="text" class="tovar_info form-control" id="tovar_kartinka_edit"><br>
+            <button id="zbereti_zminu">Редагувати товар</button>
+            <button onclick="hide('get_one_tovar_from_fb')">Закрити</button>
+           
         </div>
     </div>
     <div class="tovars">
-
+        <table>
+            <thead>
+                <tr>
+                    <th class="red">№</th>
+                    <th class="red">Назва</th>
+                    <th class="red">Тип</th>
+                    <th class="red">Опис</th>
+                    <th class="red">Вага</th>
+                    <th class="red">Ціна</th>
+                    <th class="red">Габарити</th>
+                    <th class="red">Гарантія</th>
+                    <th class="red">Країна виробника</th>
+                    <th class="red">Клас електро споживання</th>
+                    <th class="red">Виробник</th>                   
+                    <th class="red">Посилання на картинку</th>
+                    <th class="red">Редагування товару</th>
+                    <th class="red">Видалення товару</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-
     <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-auth-compat.js"></script>
